@@ -2,9 +2,12 @@ const textEl = document.getElementById('text-area')
 
 
 function displayResults(data) {
-    textEl.innerHTML = `${data.name}`
+    textEl.innerHTML = `${data}`
 }
 
-fetch('https://swapi.dev/api/people/1')
+fetch('https://swapi.dev/api/people/')
     .then(res => res.json())
-    .then(data => displayResults(data))
+    .then(data => {
+        console.log(data)
+        displayResults(data)
+    })
